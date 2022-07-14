@@ -12,6 +12,7 @@ body {
   height: 40px;
   width: 300px;
   border-radius: 2px;
+  color: #0f2339;
 }
 
 #newCourseForm > button {
@@ -31,7 +32,7 @@ body {
   border-color: bisque;
 }
 
-#courseTitle {
+.courseTitle {
   margin: 20px;
   font-size: x-large;
 }
