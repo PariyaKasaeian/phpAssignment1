@@ -38,7 +38,7 @@ if (isset($_SESSION['user_id'])) {
         <!-- Checkbox Form End  -->
 
         <!-- Editable Course Title  -->
-        <span id="courseTitle" class="courseTitle" data-originalcoursename="<?= $course->courseName ?>" contentEditable="true">
+        <span class="courseTitle" data-originalcoursename="<?= $course->courseName ?>" contentEditable="true">
             <?php echo $course->courseName  ?></span>
         <!-- Editable Course Title End  -->
 
@@ -53,7 +53,7 @@ if (isset($_SESSION['user_id'])) {
         <?php endforeach; ?>
 
         <!-- Update Button Form  -->
-        <form id="updateForm" style="display: none;" id="updateForm" action="updateCourse.php" method="post">
+        <form style="display: none;" id="updateForm" action="updateCourse.php" method="post">
         <input type="hidden" name="courseName" value="<?= $course->courseName ?>">
         <button id="updateButton">Update</button>
         </form>
@@ -79,8 +79,8 @@ if (isset($_SESSION['user_id'])) {
         const updateForm = document.querySelector('#updateForm');
         updateForm.style.display = "block";
         editedCourses.push({
-        "originalCourseTitle": e.target.getAttribute("data-originalcoursename"),
-        "newCourseTitle": e.target.innerText
+        "originalCourseName": e.target.getAttribute("data-originalcoursename"),
+        "newCourseName": e.target.innerText
         });
     }));
 
