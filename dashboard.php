@@ -21,7 +21,7 @@ if (isset($_SESSION['user_id'])) {
     <?php require_once 'nav.php' ?>
 
     <div>
-        <form action="newcourse.php" method="post">
+        <form id="newCourseForm" action="newcourse.php" method="post">
         <input type="text" name="courseName" placeholder="Enter your course">
         <button>New Course</button>
         </form>
@@ -31,19 +31,19 @@ if (isset($_SESSION['user_id'])) {
         <div style="margin-bottom: 20px;">
 
         <!-- Checkbox Form -->
-        <form style="display: inline" action="change_status.php" method="post">
+        <form id="checkboxForm" style="display: inline" action="change_status.php" method="post">
             <input type="hidden" name="courseName" value="<?= $course->courseName ?>">
             <input type="checkbox" name="status" value="1" <?= $course->checked? 'checked' : '' ?>>
         </form>
         <!-- Checkbox Form End  -->
 
         <!-- Editable Course Title  -->
-        <span class="courseTitle" data-originalcoursename="<?= $course->courseName ?>" contentEditable="true">
+        <span id="courseTitle" class="courseTitle" data-originalcoursename="<?= $course->courseName ?>" contentEditable="true">
             <?php echo $course->courseName  ?></span>
         <!-- Editable Course Title End  -->
 
         <!-- Delete Button Form  -->
-        <form style="display: inline" action="delete.php" method="post">
+        <form id="deleteCourseForm" style="display: inline" action="delete.php" method="post">
             <input type="hidden" name="courseName" value="<?= $course->courseName ?>">
             <button>Delete</button>
         </form>
@@ -53,7 +53,7 @@ if (isset($_SESSION['user_id'])) {
         <?php endforeach; ?>
 
         <!-- Update Button Form  -->
-        <form style="display: none;" id="updateForm" action="updateCourse.php" method="post">
+        <form id="updateForm" style="display: none;" id="updateForm" action="updateCourse.php" method="post">
         <input type="hidden" name="courseName" value="<?= $course->courseName ?>">
         <button id="updateButton">Update</button>
         </form>

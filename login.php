@@ -13,14 +13,14 @@ if (isset($_SESSION['user_id'])) {
         <meta name="viewport"
               content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <title>COMP 3015: SQL Injection Example</title>
+        <title>Pariya Assignment 1</title>
         <script src="https://cdn.tailwindcss.com"></script>
     </head>
     <body class="background">
     <div>
         <div class="sm:mx-auto sm:w-full sm:max-w-md mt-16">
             <h2 class="mt-6 text-center text-3xl font-extrabold text-white">
-                NewCo. Login
+                Course Manager Login
             </h2>
         </div>
 
