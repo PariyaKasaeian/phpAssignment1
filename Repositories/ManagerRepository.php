@@ -39,9 +39,9 @@ class ManagerRepository extends Repository {
 		return $sqlStatement->execute();
 	}
 
-	public function updateCourse(string $originalCourseName, string $UpdatedName) {
+	public function updateCourse(string $originalCourseName, string $updatedName) {
 		$sqlStatement = $this->mysqlConnection->prepare("UPDATE manager SET courseName=? WHERE courseName=?");
-		$sqlStatement->bind_param('ss', $originalCourseName, $UpdatedName);
+		$sqlStatement->bind_param('ss', $updatedName, $originalCourseName);
 		return $sqlStatement->execute();
 	}
 

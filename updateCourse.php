@@ -35,7 +35,6 @@ Structure will look like this:
 
 $json = (array) json_decode($rawPostBody);
 
-
 /*
 Payload looks like this:
 (
@@ -45,11 +44,7 @@ Payload looks like this:
 */
 foreach ($json as $index => $payload) {
   $payloadAsArray = json_decode(json_encode($payload), true);
-  foreach($courses as $idx => $course) {
-    if($course->courseName == $payloadAsArray["originalCourseTitle"]) {
-      $managerRepository->updateCourse($payloadAsArray["originalCourseTitle"], $payloadAsArray["newCourseTitle"]);
-    }
-  }
+  $managerRepository->updateCourse($payloadAsArray["originalCourseName"], $payloadAsArray["newCourseName"]);
 }
 
 
